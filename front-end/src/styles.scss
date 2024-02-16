@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
+
+:root {
+  --ipmc-green: rgb(5, 63, 0);
+  --light-green: rgb(136, 197, 136);
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+body {
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
