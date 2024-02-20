@@ -3,6 +3,7 @@
 :root {
   --ipmc-green: rgb(5, 63, 0);
   --light-green: rgb(136, 197, 136);
+  --dark-green: rgb(0, 28, 0);
 }
 
 * {
@@ -35,3 +36,30 @@ a {
     opacity: 1;
   }
 }
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 15px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: #fff; /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--ipmc-green); /* color of the scroll thumb */
+  border-radius: 10px; /* roundness of the scroll thumb */
+  border: 3px solid #fff; /* creates padding around scroll thumb */
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

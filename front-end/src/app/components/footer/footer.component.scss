@@ -1,0 +1,35 @@
+.footer {
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+  background-color: var(--dark-green);
+  padding: 3rem 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .address {
+    span {
+      color: white;
+      display: flex;
+      align-items: center;
+
+      .icon {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .footer {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .address {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+  }
+}
