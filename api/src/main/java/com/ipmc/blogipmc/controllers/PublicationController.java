@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(path = "publication")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*")
 public class PublicationController {
     private final PublicationService publicationService;
     @GetMapping
