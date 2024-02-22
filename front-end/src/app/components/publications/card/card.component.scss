@@ -1,0 +1,65 @@
+.card-container {
+  width: 350px;
+  height: 350px;
+  cursor: pointer;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  transition: box-shadow 0.2s;
+
+  .image-container {
+    height: 45%;
+    max-width: 100%;
+    background-image: url("@assets/images/praying.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .publication-details {
+    height: 55%;
+    padding: 1.3rem;
+
+    p,
+    span {
+      font-size: 14px;
+    }
+
+    h4,
+    p,
+    span {
+      color: #555;
+      transition: all 0.2s;
+    }
+
+    .date {
+      span {
+        display: flex;
+        align-items: center;
+        .icon {
+          margin-right: 5px;
+          width: 1.2rem;
+          height: 1.2rem;
+          font-size: 1.2rem;
+        }
+      }
+
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+.card-container:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: box-shadow 0.2s;
+
+  .publication-details {
+    h4,
+    p,
+    span {
+      color: #222;
+      transition: all 0.2s;
+    }
+  }
+}

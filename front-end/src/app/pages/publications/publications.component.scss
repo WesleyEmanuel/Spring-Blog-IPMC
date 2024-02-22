@@ -1,4 +1,23 @@
 .publications {
-  width: 80%;
-  margin: 2rem auto;
+  width: 90%;
+  margin: 1rem auto;
+
+  .cards-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: center;
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 800px) {
+  .publications {
+    width: 80%;
+    margin: 2rem auto;
+
+    .cards-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
 }

@@ -1,5 +1,13 @@
 <section class="publications">
   @if(loading){
+
   <app-skeleton-cards-loading />
-  } @else{ }
+
+  } @else{
+  <div class="cards-container">
+    @for(publication of pageablePublications.content; track $index){
+    <app-card [publication]="publication"></app-card>
+    }
+  </div>
+  }
 </section>
