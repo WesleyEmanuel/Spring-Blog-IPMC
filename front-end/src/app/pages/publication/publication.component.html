@@ -1,0 +1,54 @@
+<div class="publication-container">
+  @if(publication){
+  <div class="image-container">
+    <img src="../../../assets/images/praying.jpg" alt="Logo IPMC" />
+  </div>
+  <div class="publication-header">
+    <div class="title">
+      <h1>{{ publication.title }}</h1>
+    </div>
+    <div class="subtitle">
+      <p>{{ publication.subtitle }}</p>
+    </div>
+    <div class="date">
+      <span>
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Clock icon"
+          fontIcon="schedule"
+          class="icon"
+        ></mat-icon>
+        {{ publication.dateTime.slice(10, 16) }}
+      </span>
+      <span>
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Clock icon"
+          fontIcon="calendar_month"
+          class="icon"
+        ></mat-icon>
+        {{ publication.dateTime.slice(0, 10).split("-").reverse().join("/") }}
+      </span>
+    </div>
+  </div>
+  <div class="publication-content" [innerHTML]="publication.content"></div>
+  <div class="publication-footer">
+    <hr />
+    <h4>Rev. Gleide Nascimento</h4>
+    <p>
+      Marido da Ana Zélia, pai do Manassés e da Thaís, pastor da Igreja
+      Presbiteriana de Monte Castelo, mestre em aconselhamento bíblico pelo
+      Centro Presbiteriano de Pós-Graduação Andrew Jumper.
+    </p>
+    <button routerLink="/publicacoes">
+      Ver mais publicações
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Arrows icon"
+        fontIcon="logout"
+        class="icon"
+      ></mat-icon>
+    </button>
+  </div>
+  }
+</div>

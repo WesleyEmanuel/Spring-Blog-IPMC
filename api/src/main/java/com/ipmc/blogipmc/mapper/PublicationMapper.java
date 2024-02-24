@@ -18,6 +18,7 @@ public class PublicationMapper {
         return Publication.builder()
                 .title(publicationPostRequestBody.getTitle())
                 .subtitle(publicationPostRequestBody.getSubtitle())
+                .author(publicationPostRequestBody.getAuthor())
                 .content(publicationPostRequestBody.getContent())
                 .dateTime(dateUtil.formatLocalDateTimeToDatabaseStyle(LocalDateTime.now()))
                 .build();

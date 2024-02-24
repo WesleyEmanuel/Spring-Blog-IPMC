@@ -1,5 +1,5 @@
 .card-container {
-  width: 350px;
+  width: 280px;
   height: 350px;
   cursor: pointer;
   border-radius: 16px;
@@ -61,5 +61,17 @@
       color: #222;
       transition: all 0.2s;
     }
+  }
+}
+
+@media (min-width: 800px) {
+  .card-container {
+    width: 300px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-container {
+    width: 350px;
   }
 }

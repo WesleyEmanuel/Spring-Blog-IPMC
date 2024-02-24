@@ -11,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RestController
 @RequestMapping(path = "publication")
 @RequiredArgsConstructor
@@ -22,6 +24,11 @@ public class PublicationController {
         return new ResponseEntity<>(
                 publicationService.getPaginatedPublications(pageable), HttpStatus.OK
         );
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Publication> getPublicationById(@PathVariable Long id){
+        return new ResponseEntity<>(publicationService.getPublicationById(id), HttpStatus.OK);
     }
 
     @PostMapping

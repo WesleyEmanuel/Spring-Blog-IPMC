@@ -9,6 +9,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class PublicationService {
@@ -25,5 +27,9 @@ public class PublicationService {
         );
 
         return publicationRepository.save(newPublication);
+    }
+
+    public Publication getPublicationById(Long id) {
+        return publicationRepository.findById(id).orElse(null);
     }
 }

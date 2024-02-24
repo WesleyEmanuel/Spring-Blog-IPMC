@@ -15,6 +15,9 @@ public class PublicationPostRequestBody {
     @NotNull(message = "The publication subtitle cannot be null")
     private String subtitle;
 
+    @NotNull(message = "The publication subtitle cannot be null")
+    private String author;
+
     @NotNull(message = "The publication content cannot be null")
     @NotEmpty(message = "The publication content cannot be empty")
     private String content;

@@ -14,6 +14,7 @@ import { CardComponent } from '../../components/publications/card/card.component
 })
 export class PublicationsComponent implements OnInit {
   loading: boolean = true;
+  loadingBtn: boolean = false;
   pageablePublications!: PageableResponse<Publication>;
 
   constructor(private publicationsService: PublicationsService) {}
@@ -24,10 +25,29 @@ export class PublicationsComponent implements OnInit {
     });
   }
 
-  getPublications(callback = () => {}) {
-    this.publicationsService.getPublications().subscribe((resp) => {
-      this.pageablePublications = resp;
-      callback();
-    });
+  getPublications(callback = () => {}, pageNumber?: number) {
+    this.publicationsService.getPublications(pageNumber).subscribe(
+      (resp) => {
+        this.pageablePublications = {
+          ...resp,
+          content: this.pageablePublications
+            ? this.pageablePublications.content.concat(resp.content)
+            : resp.content,
+        };
+        callback();
+      },
+      () => {
+        callback();
+      }
+    );
+  }
+
+  loadingMorePublications(currentPageNumber: number) {
+    this.loadingBtn = true;
+    const loadingPage = currentPageNumber + 1;
+
+    this.getPublications(() => {
+      this.loadingBtn = false;
+    }, loadingPage);
   }
 }

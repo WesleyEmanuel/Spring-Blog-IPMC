@@ -25,6 +25,9 @@ public class Publication {
     @Column(nullable = false)
     private String subtitle;
 
+    @Column(nullable = false)
+    private String author;
+
     @Lob
     @Column(nullable = false, columnDefinition = "TEXT")
     private String content;

@@ -12,9 +12,13 @@ export class PublicationsService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getPublications() {
+  getPublications(page: number = 0, size: number = 9) {
     return this.httpClient.get<PageableResponse<Publication>>(
-      `${this.url}/publication`
+      `${this.url}/publication?size=${size}&page=${page}`
     );
+  }
+
+  getPublicationById(id: number) {
+    return this.httpClient.get<Publication>(`${this.url}/publication/${id}`);
   }
 }
