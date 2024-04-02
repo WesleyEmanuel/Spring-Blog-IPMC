@@ -21,6 +21,4 @@ public class PublicationPostRequestBody {
     @NotNull(message = "The publication content cannot be null")
     @NotEmpty(message = "The publication content cannot be empty")
     private String content;
-
-    private String dateTime;
 }
