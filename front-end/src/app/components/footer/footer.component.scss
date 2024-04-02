@@ -34,6 +34,21 @@
   }
 }
 
+.developer{
+  background-color: #000;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+
+  span{
+    color: white;
+
+    a{
+      color: #ffa20e;
+    }
+  }
+}
+
 @media (min-width: 700px) {
   .footer {
     flex-direction: row;

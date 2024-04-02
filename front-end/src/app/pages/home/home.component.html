@@ -1,34 +1,75 @@
-<section class="home">
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner border">
-      <div class="carousel-item active">
-        <picture>
-          <source
-            media="(min-width: 800px)"
-            srcset="../../../assets/images/banner.png"
-          />
+<section class="home" id="home">
+  @if(mobile_size){
+    <div id="carouselExampleIndicators" class="carousel slide">
+      <div class="carousel-inner">
+        @for(publication of publications; track publication.id){
+          <div class="carousel-item active" (click)="openPublication(publication.id)">
+            <div class="publication-container last-publication">
+              <div class="publication-content">
+                <img
+                  src="../../../assets/images/praying.jpg"
+                  alt="62 anos"
+                />
+                <div class="description-container">
+                  <h2 class="publication-title">{{publication.title}}</h2>
+                  <p class="publication-subtitle">{{publication.subtitle}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  } @else{
+    <div class="publications-gallery">
+      <div class="publication-container last-publication" (click)="openPublication(publications[0].id)">
+        <div class="publication-content">
           <img
-            class="d-block banner"
-            src="../../../assets/images/62-anos.png"
-            alt="Primeiro Slide"
+            src="../../../assets/images/praying.jpg"
+            alt="62 anos"
           />
-        </picture>
+          <div class="description-container">
+            <h2 class="publication-title">{{publications[0].title}}</h2>
+            <p class="publication-subtitle">{{publications[0].subtitle}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="more-publication">
+        <div class="publication-container" (click)="openPublication(publications[1].id)">
+          <div class="publication-content">
+            <img
+              src="../../../assets/images/praying.jpg"
+              alt="62 anos"
+            />
+            <div class="description-container">
+              <h2 class="publication-title">{{publications[1].title}}</h2>
+              <p class="publication-subtitle">{{publications[1].subtitle}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="publication-container" (click)="openPublication(publications[2].id)">
+          <div class="publication-content">
+            <img
+              src="../../../assets/images/praying.jpg"
+              alt="62 anos"
+            />
+            <div class="description-container">
+              <h2 class="publication-title">{{publications[2].title}}</h2>
+              <p class="publication-subtitle">{{publications[2].subtitle}}</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <a
-      class="carousel-control-prev control-carousel-icon"
-      role="button"
-      data-slide="prev"
-    >
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    </a>
-    <a
-      class="carousel-control-next control-carousel-icon"
-      role="button"
-      data-slide="next"
-    >
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    </a>
-  </div>
+  }
 </section>
 <app-horarios></app-horarios>
